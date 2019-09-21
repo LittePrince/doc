@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "14d76a01-83cd-475b-8e66-8e6569f12e40",
+		"name": "api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "274",
+						"type": "text"
+					},
+					{
+						"key": "Chunked",
+						"value": "false",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"srcPosition\": {\n        \"type\": 0,\n        \"npos\": {\n            \"row\": 1,\n            \"col\": 0,\n            \"layer\": 2\n        },\n        \"areaId\": 0\n    },\n    \"attachId\": \"586\",\n    \"token\": \"3bc0e2c9-f995-4705-929d-05564d2fa389\",\n    \"wcsTypeId\": \"1\",\n    \"dstPosition\": {\n        \"type\": 1,\n        \"npos\": null,\n        \"areaId\": 100\n    },\n    \"boxId\": null\n}"
+				},
+				"url": {
+					"raw": "http://106.14.180.24:9091/wcsapi/v1/task/",
+					"protocol": "http",
+					"host": [
+						"106",
+						"14",
+						"180",
+						"24"
+					],
+					"port": "9091",
+					"path": [
+						"wcsapi",
+						"v1",
+						"task",
+						""
+					]
+				},
+				"description": "weightAPI"
+			},
+			"response": []
+		},
+		{
+			"name": "weight",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"SlaveId\": 1\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/wms/waveSortPolicy/station/assign?waveSortNum=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"station",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "waveSortNum",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "生成tms空货箱",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wms/waveSortPolicy/station/exe?waveSortNum=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"station",
+						"exe"
+					],
+					"query": [
+						{
+							"key": "waveSortNum",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "生成发货单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n{\"id\":2},\n{\"id\":3}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/wms/waveSortPolicy/erp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"erp"
+					]
+				},
+				"description": "发货单"
+			},
+			"response": []
+		},
+		{
+			"name": "授权发送到站台",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"waveSortNum\":\"1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/wms/waveSortPolicy/station/assign?waveSortNum=1568793307843",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"station",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "waveSortNum",
+							"value": "1568793307843"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "模拟发货单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"code\": \"test0000003\",\n        \"qty\": 1,\n        \"cod\": 0,\n        \"platFormCode\": null,\n        \"planDeliveryCode\": null,\n        \"buyerMemo\": null,\n        \"receiverName\": \"李三\",\n        \"receiverPhone\": \"\",\n        \"receiverMobile\": \"1888888888\",\n        \"receiverZip\": \"\",\n        \"receiverAddress\": \"我哪里知道我只是测试\",\n        \"areaName\": null,\n        \"wareHouseCode\": \"ck-1\",\n        \"details\": [\n            {\n                \"qty\": 1,\n                \"erpItem\": {\n                    \"id\": 2\n                }\n            },\n            {\n                \"qty\": 1,\n                \"erpItem\": {\n                    \"id\": 4\n                }\n            },\n            {\n                \"qty\": 1,\n                \"erpItem\": {\n                    \"id\": 5\n                }\n            },\n            {\n                \"qty\": 1,\n                \"erpItem\": {\n                    \"id\": 4\n                }\n            }\n           \n        ]\n            \n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/wms/erp/tradeDelivery",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"erp",
+						"tradeDelivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "生成erp策略",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\"id\":5}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/wms/waveSortPolicy/erp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"erp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "转为tms",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/wms/waveSortPolicy/erp/56",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"erp",
+						"56"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "波次策略",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/wms/waveSortPolicy/station/exe?waveSortNum=1568860711698",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wms",
+						"waveSortPolicy",
+						"station",
+						"exe"
+					],
+					"query": [
+						{
+							"key": "waveSortNum",
+							"value": "1568860711698"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
